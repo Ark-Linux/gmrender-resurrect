@@ -369,7 +369,10 @@ static gboolean my_bus_callback(GstBus * bus, GstMessage * msg,
 }
 
 static gchar *audio_sink = NULL;
-static gchar *audio_device = NULL;
+/* TYM change:
+ * set default sink
+ */
+static gchar *audio_device = "pulsesink";
 static gchar *audio_pipe = NULL;
 static gchar *videosink = NULL;
 static double initial_db = 0.0;
