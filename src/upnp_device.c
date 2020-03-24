@@ -422,7 +422,12 @@ static gboolean initialize_device(struct upnp_device_descriptor *device_def,
 	int rc;
 	char *buf;
 
-	rc = UpnpInit(ip_address, port);
+	/* TYM change:
+	 * Get the upnp server by adapter names
+	 */
+	//rc = UpnpInit(ip_address, port);
+	rc = UpnpInit2("wlan0", port);
+
 	/* There have been situations reported in which UPNP had issues
 	 * initializing right after network came up. #129
 	 */
